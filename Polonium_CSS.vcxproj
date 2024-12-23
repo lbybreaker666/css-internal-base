@@ -161,6 +161,7 @@
     <ClCompile Include="Util\Hook\MinHook\trampoline.c" />
     <ClCompile Include="Util\Interface\Interface.cpp" />
     <ClCompile Include="Util\Math\Math.cpp" />
+    <ClCompile Include="Util\Menu\Menu.cpp" />
     <ClCompile Include="Util\Offsets\Offsets.cpp" />
     <ClCompile Include="Util\Pattern\Pattern.cpp" />
     <ClCompile Include="Util\VFunc\VFunc.cpp" />
@@ -246,6 +247,7 @@
     <ClInclude Include="Util\Math\Math.h" />
     <ClInclude Include="Util\Math\Vector\Vector.h" />
     <ClInclude Include="Util\Math\Vector\Vector2D.h" />
+    <ClInclude Include="Util\Menu\Menu.h" />
     <ClInclude Include="Util\Offsets\Offsets.h" />
     <ClInclude Include="Util\Pattern\Pattern.h" />
     <ClInclude Include="Util\Util.h" />

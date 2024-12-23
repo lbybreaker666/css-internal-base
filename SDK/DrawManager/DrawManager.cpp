@@ -8,7 +8,7 @@ void CHelpers_DrawManager::Initialize()
 	m_Fonts[EFonts::DEBUG] = { "Consolas",  16, FW_DONTCARE, EFontFlags::FONTFLAG_OUTLINE };
 	m_Fonts[EFonts::ESP] = { "Tahoma",    11, FW_DONTCARE, EFontFlags::FONTFLAG_OUTLINE };
 	m_Fonts[EFonts::ESP_NAME] = { "Arial",     14, FW_DONTCARE, EFontFlags::FONTFLAG_OUTLINE };
-	m_Fonts[EFonts::ESP_WEAPON] = { "Verdana",   12, FW_DONTCARE, EFontFlags::FONTFLAG_OUTLINE };
+	m_Fonts[EFonts::ESP_WEAPON] = { "Verdana",   12, 700, EFontFlags::FONTFLAG_DROPSHADOW };
 	m_Fonts[EFonts::MENU_TAHOMA] = { "Tahoma",    12, FW_DONTCARE, EFontFlags::FONTFLAG_OUTLINE };
 	m_Fonts[EFonts::MENU_CONSOLAS] = { "Consolas",  12, FW_DONTCARE, EFontFlags::FONTFLAG_OUTLINE };
 	m_Fonts[EFonts::MENU_VERDANA] = { "Verdana",   12, FW_DONTCARE, EFontFlags::FONTFLAG_OUTLINE };

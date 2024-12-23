@@ -39,6 +39,7 @@ void CFeatures_ESP::Render(C_CSPlayer* pLocal)
 
 			const int nHealth = pPlayer->GetHealth();
 			const int nMaxHealth = pPlayer->GetMaxHealth();
+		
 
 			const Color clrHealth = Util::GetHealthColor(nHealth, nMaxHealth);
 			const Color clrTeam = Util::GetTeamColor(pPlayer->GetTeamNumber());
@@ -64,13 +65,13 @@ void CFeatures_ESP::Render(C_CSPlayer* pLocal)
 				const float flMaxHealth = static_cast<float>(nMaxHealth);
 				const float flHealth = U::Math.Clamp<float>(static_cast<float>(nHealth), 1.0f, flMaxHealth);
 
-				static const int nWidth = 2;
+				static const int nWidth = 3;
 				const int nHeight = (h + (flHealth < flMaxHealth ? 2 : 1));
 				const int nHeight2 = (h + 1);
 
 				const float ratio = (flHealth / flMaxHealth);
 				H::Draw.Rect(static_cast<int>(((x - nWidth) - 2)), static_cast<int>((y + nHeight - (nHeight * ratio))), nWidth, static_cast<int>((nHeight * ratio)), clrHealth);
-				H::Draw.OutlinedRect(static_cast<int>(((x - nWidth) - 2) - 1), static_cast<int>((y + nHeight - (nHeight * ratio)) - 1), nWidth + 2, static_cast<int>((nHeight * ratio) + 1), COLOR_BLACK);
+				H::Draw.OutlinedRect(static_cast<int>(((x - nWidth) - 2) - 1), static_cast<int>((y + nHeight - (nHeight * ratio))), nWidth + 2, static_cast<int>((nHeight * ratio) + 1), COLOR_BLACK);
 
 				x += 1;
 			}
@@ -78,15 +79,24 @@ void CFeatures_ESP::Render(C_CSPlayer* pLocal)
 			player_info_t pi;
 			if (Vars::ESP::Players::Name && I::EngineClient->GetPlayerInfo(n, &pi))
 			{
+			
 				wchar_t szName[MAX_PLAYER_NAME_LENGTH];
 				Q_UTF8ToUTF16(Util::SafeName(pi.name), szName, MAX_PLAYER_NAME_LENGTH);
-
-				H::Draw.String(EFonts::ESP_NAME,
+				H::Draw.String(EFonts::ESP,
 					x + (w / 2),
-					y - (H::Draw.GetFontHeight(EFonts::ESP_NAME) + 2),
-					COLOR_GREY,
+					y - (H::Draw.GetFontHeight(EFonts::ESP) + 1),
+					COLOR_WHITE,
 					TXT_CENTERX,
 					szName);
+
+				x += 1;
+
+				H::Draw.String(EFonts::ESP,
+					x + (w / 2),
+					y - (H::Draw.GetFontHeight(EFonts::ESP) + 1),
+					COLOR_WHITE,
+					TXT_CENTERX,
+					std::to_string(pPlayer->EyeAngles().y).c_str());
 			}
 
 			break;

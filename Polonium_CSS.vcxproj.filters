@@ -102,6 +102,9 @@
     <ClCompile Include="Features\NoSpread\NoSpread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Util\Menu\Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entry\Entry.h">
@@ -354,6 +357,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Features\NoSpread\NoSpread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Menu\Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #include "../Hooks.h"
 
 #include "../../Features/ESP/ESP.h"
+#include "../../Util/Menu/Menu.h"
 
 DEFINE_HOOK(IEngineVGui_Paint, void, __fastcall, void* ecx, void* edx, int mode)
 {
@@ -19,10 +20,12 @@ DEFINE_HOOK(IEngineVGui_Paint, void, __fastcall, void* ecx, void* edx, int mode)
 				if (pLocal)
 				{
 					F::ESP.Render(pLocal);
+					
 				}
 			}
 
 			H::Draw.String(EFonts::DEBUG, 5, 5, { 204, 204, 204, 255 }, TXT_DEFAULT, L"CSS-Internal by whydoIhax - unknowncheats.me");
+			U::MENU.Render();
 		}
 		I::MatSystemSurface->FinishDrawing();
 	}
